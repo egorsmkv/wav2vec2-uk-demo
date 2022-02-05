@@ -25,7 +25,7 @@ python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_file sh
 python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_file long_1.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
 ```
 
-Inference long files with chunking.
+NOTE: Do the inference process for long files with chunking.
 
 ---
 
