@@ -2,6 +2,10 @@
 
 The model is hosted here: https://huggingface.co/Yehor/wav2vec2-xls-r-1b-uk-with-lm
 
+Follow our community in Telegram: https://t.me/speech_recognition_uk
+
+---
+
 Install deps:
 
 ```bash
