@@ -23,6 +23,8 @@ python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files s
 # with chunking
 python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files short_1.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
 python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files long_1.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
+
+python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files tsn.wav,tsn_2.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
 ```
 
 NOTE: Do the inference process for long files with chunking.
