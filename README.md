@@ -1,6 +1,7 @@
 # Demo of Ukrainian wav2vec2 model
 
 The model is hosted here: https://huggingface.co/Yehor/wav2vec2-xls-r-1b-uk-with-lm
+The model with better News LM: https://huggingface.co/Yehor/wav2vec2-xls-r-1b-uk-with-news-lm
 
 Follow our community in Telegram: https://t.me/speech_recognition_uk
 
