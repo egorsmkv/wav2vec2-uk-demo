@@ -7,6 +7,13 @@ Follow our community in Telegram: https://t.me/speech_recognition_uk
 
 ---
 
+Create a virtualenv:
+
+```bash
+pipenv install
+pipenv shell
+```
+
 Install deps:
 
 ```bash
