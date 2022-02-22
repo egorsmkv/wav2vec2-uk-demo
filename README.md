@@ -127,6 +127,8 @@ Duration tracked with loading the LM.
 
 ## Using timestamps
 
+The `inference_timestamps.py` script can be used to do inference with timestamps for chars and words.
+
 ### `output_char_offsets=True`
 
 ```
