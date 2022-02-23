@@ -1,4 +1,6 @@
 import argparse
+from time import gmtime, strftime
+
 import torch
 import torchaudio
 from pathlib import Path
@@ -22,6 +24,7 @@ def main(args):
         if sample_rate != 16000:
             resample = torchaudio.transforms.Resample(
                 sample_rate, 16000, resampling_method='sinc_interpolation')
+            sample_rate = 16000
             speech_array = resample(waveform)
             sp = speech_array.squeeze().numpy()
         else:
@@ -39,13 +42,22 @@ def main(args):
         with torch.no_grad():
             logits = model(input_values).logits
 
-        pred_ids = torch.argmax(logits, axis=-1).cpu().tolist()
-        print(pred_ids[0])
-
-        prediction = tokenizer.decode(pred_ids[0], output_word_offsets=True)
+        # prediction = tokenizer.decode(pred_ids[0], output_word_offsets=True)
         # prediction = tokenizer.decode(pred_ids[0], output_char_offsets=True)
 
-        print(prediction)
+        pred_ids = torch.argmax(logits, axis=-1).cpu().tolist()
+        prediction = tokenizer.decode(pred_ids[0], output_word_offsets=True)
+
+        print(f'Sample rate: {sample_rate}')
+        time_offset = 320 / sample_rate
+
+        for item in prediction.word_offsets:
+            r = item
+
+            s = round(r['start_offset'] * time_offset, 2)
+            e = round(r['end_offset'] * time_offset, 2)
+
+            print(f"{s} - {e}: {r['word']}")
 
 
 if __name__ == "__main__":
