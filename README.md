@@ -1,3 +1,14 @@
+---
+title: Wav2vec2 Ukrainian with Timestamps
+emoji: 🔥
+colorFrom: blue
+colorTo: yellow
+sdk: gradio
+app_file: app.py
+pinned: false
+---
+
+
 # Demo of Ukrainian wav2vec2 model
 
 - The base model is hosted here: https://huggingface.co/Yehor/wav2vec2-xls-r-1b-uk-with-lm

@@ -1,0 +1,14 @@
+# gradio requirements
+gradio==2.8.2
+jinja2==3.0.3
+# ml requirements
+git+https://github.com/huggingface/transformers@bb7949b35a0a2247bc20c7cb6d86764770ca3232
+pyctcdecode==0.3.0
+https://github.com/kpu/kenlm/archive/master.zip
+# torch
+-f https://download.pytorch.org/whl/cu113/torch_stable.html
+torch==1.10.2+cu113 
+-f https://download.pytorch.org/whl/cu113/torch_stable.html
+torchvision==0.11.3+cu113 
+-f https://download.pytorch.org/whl/cu113/torch_stable.html
+torchaudio===0.10.2+cu113 
