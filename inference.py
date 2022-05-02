@@ -9,9 +9,9 @@ def main(args):
     processor = Wav2Vec2ProcessorWithLM.from_pretrained(args.model_id)
     model = Wav2Vec2ForCTC.from_pretrained(args.model_id)
     model.to('cpu')
-    
+
     files = args.path_files.split(',')
-    
+
     for path_file in files:
         print('File:', path_file)
 

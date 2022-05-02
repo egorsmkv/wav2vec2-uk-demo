@@ -1,5 +1,4 @@
 import argparse
-from time import gmtime, strftime
 
 import torch
 import torchaudio
@@ -51,6 +50,7 @@ def main(args):
         print(f'Sample rate: {sample_rate}')
         time_offset = 320 / sample_rate
 
+        words = []
         for item in prediction.word_offsets:
             r = item
 
@@ -58,6 +58,11 @@ def main(args):
             e = round(r['end_offset'] * time_offset, 2)
 
             print(f"{s} - {e}: {r['word']}")
+
+            words.append(r['word'])
+
+        print('---')
+        print(' '.join(words))
 
 
 if __name__ == "__main__":

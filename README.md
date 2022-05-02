@@ -32,6 +32,9 @@ pip install https://github.com/huggingface/transformers/archive/refs/tags/v4.16.
 pip install https://github.com/kpu/kenlm/archive/master.zip
 
 pip install torch==1.9.1 torchaudio==0.9.1 pyctcdecode==0.3.0
+
+# or
+pip install torch==1.11.0 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 ```
 
 Run inference:
@@ -51,6 +54,9 @@ python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-news-lm --path_fi
 python inference_gpu.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-news-lm --path_files mer_lviv_interview.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
 
 python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files tsn.wav,tsn_2.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
+python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-binary-news-lm --path_files tsn.wav,tsn_2.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
+
+python inference_timestamps.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-binary-news-lm --path_files short_1.wav
 ```
 
 NOTE: Do the inference process for long files with chunking.

@@ -56,6 +56,7 @@ def inference(audio):
     time_offset = 320 / sample_rate
 
     total_prediction = []
+    words = []
     for item in prediction.word_offsets:
         r = item
 
@@ -63,8 +64,11 @@ def inference(audio):
         e = round(r['end_offset'] * time_offset, 2)
 
         total_prediction.append(f"{s} - {e}: {r['word']}")
+        words.append(r['word'])
+
     print(prediction[0])
-    return "\n".join(total_prediction)
+
+    return "\n".join(total_prediction) + "\n\n" + ' '.join(words)
 
 
 inputs = gr.inputs.Audio(label="Input Audio", type="file")
