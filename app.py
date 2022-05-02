@@ -8,7 +8,7 @@ model_name = "Yehor/wav2vec2-xls-r-1b-uk-with-lm"
 tokenizer = Wav2Vec2CTCTokenizer.from_pretrained(model_name)
 processor = Wav2Vec2ProcessorWithLM.from_pretrained(model_name)
 model = Wav2Vec2ForCTC.from_pretrained(model_name)
-model.to("cuda")
+model.to("cpu")
 
 
 # define function to read in sound file
@@ -45,7 +45,6 @@ def inference(audio):
         stride_length_s=(4, 2),
         return_tensors="pt",
     ).input_values
-    input_values = input_values.cuda()
 
     with torch.no_grad():
         logits = model(input_values).logits
