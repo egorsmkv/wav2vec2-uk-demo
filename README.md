@@ -46,6 +46,9 @@ python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files s
 python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files short_1.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
 python inference.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files long_1.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
 
+# long files
+python inference_long_file.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files long_1_16khz.wav
+
 # with chunking on GPU
 python inference_gpu.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files short_1.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
 python inference_gpu.py --model_id Yehor/wav2vec2-xls-r-1b-uk-with-lm --path_files long_1.wav --chunk_length_s 10 --stride_length_s_l 4 --stride_length_s_r 2
